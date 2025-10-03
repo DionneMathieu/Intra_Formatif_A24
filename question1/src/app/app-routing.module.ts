@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { CatComponent } from './cat/cat.component';
 import { DogComponent } from './dog/dog.component';
 import { catGuardGuard } from './cat-guard.guard';
+import { homeGuard } from './home.guard';
 
 
 const routes: Routes = [
@@ -12,7 +13,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cat', component: CatComponent, canActivate: [catGuardGuard] },
   { path: 'dog', component: DogComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [homeGuard] },
   { path: '**', redirectTo: '/'}
 ];
 
